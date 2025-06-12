@@ -53,6 +53,9 @@ if st.button("Predict"):
         "Temperature (°C)": temperature_input,
         "Predicted Energy Consumption (kWh)": round(prediction, 2)
     })
+#save the model
+import joblib
+joblib.dump(model, r'C:\Users\priya\OneDrive\Desktop\greenAI\day-7\linear_regression_model.pkl')
 
 # Display predictions
 if st.session_state.prediction_data:
@@ -60,6 +63,3 @@ if st.session_state.prediction_data:
     history_df = pd.DataFrame(st.session_state.prediction_data)
     st.table(history_df)
 
-#save the model
-import joblib
-joblib.dump(model, 'linear_regression_model.pkl')
