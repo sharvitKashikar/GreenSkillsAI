@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Load dataset
-appliance_data = pd.read_csv(r'C:\Users\priya\OneDrive\Desktop\greenAI\day-7\appliance_energy.csv')
+appliance_data = pd.read_csv(r'C:\Users\priya\OneDrive\Desktop\greenAI\day-7\sample streamlit app\appliance_energy.csv')
 
 # Feature and target
 x = appliance_data[['Temperature (°C)']]
@@ -55,7 +55,7 @@ if st.button("Predict"):
     })
 #save the model
 import joblib
-joblib.dump(model, r'C:\Users\priya\OneDrive\Desktop\greenAI\day-7\linear_regression_model.pkl')
+joblib.dump(model, r'C:\Users\priya\OneDrive\Desktop\greenAI\day-7\sample streamlit app\linear_regression_model.pkl')
 
 # Display predictions
 if st.session_state.prediction_data:
