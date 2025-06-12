@@ -1,1 +1,1 @@
-import requests; print(requests.get("https://api.github.com/repos/priyanshu-deshmukh/greenAI-Sem7/traffic/views", headers={"Accept": "application/vnd.github.v3+json", "Authorization": "token YOUR_TOKEN"}).json()['count'])
+![Views](https://komarev.com/ghpvc/?username=priyanshu-deshmukh&color=blue)
