@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
 
 # Step 1: Load the dataset
-data = pd.read_csv(r'C:\Users\priya\OneDrive\Desktop\greenAI\day-8\New folder\heart.csv')  # Replace with your file path
+data = pd.read_csv(r'C:\Users\priya\OneDrive\Desktop\greenAI\day-8\SVM\heart.csv')  # Replace with your file path
 
 # Step 2: Encode categorical variables
 label_encoders = {}
@@ -36,3 +36,18 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
+
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+
+# Step 1: Compute confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+
+# Step 2: Display using ConfusionMatrixDisplay
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
+disp.plot(cmap='Blues')
+
+# Step 3: Show the plot
+plt.title('Confusion Matrix')
+plt.grid(False)
+plt.show()
