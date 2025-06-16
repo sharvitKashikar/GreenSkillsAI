@@ -31,7 +31,7 @@ model.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(Dense(32, activation='relu'))
 model.add(Dense(1, activation='linear'))
 model.compile(optimizer='adam', loss='mse', metrics=['mae'])
-model.fit(X_train, y_train, epochs=50, batch_size=16, validation_split=0.2, verbose=0)
+model.fit(X_train, y_train, epochs=50, batch_size=128, validation_split=0.2, verbose=0)
 
 st.header('Enter Climate Features to Predict Energy Consumption')
 user_input = {}
